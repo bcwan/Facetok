@@ -1,3 +1,4 @@
+// 29:10 https://www.youtube.com/watch?v=n1mdAPFq2Os&ab_channel=freeCodeCamp.org
 const { ApolloServer } = require('apollo-server');
 const gql = require('graphql-tag');
 const mongoose = require('mongoose');
