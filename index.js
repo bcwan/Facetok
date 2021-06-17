@@ -17,7 +17,7 @@ const typeDefs = gql`
   }
 `;
 
-// needed for any subscription or mutation in GraphQL
+// needed for any subscription or mutation in GraphQL: responsible for executing methods inside
 const resolvers = {
   Query: {
     async getPosts() {
