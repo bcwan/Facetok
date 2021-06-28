@@ -16,7 +16,7 @@ function generateToken(user) {
   );
 }
 
-module.export = {
+module.exports = {
   Mutation: {
     async register(_, { registerInput: { username, email, password, confirmPassword } }) {
       // Validate user data
@@ -31,7 +31,6 @@ module.export = {
       });
 
       const res = await newUser.save();
-
       const token = generateToken(res);
 
       return {
