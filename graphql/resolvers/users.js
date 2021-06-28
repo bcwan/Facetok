@@ -18,27 +18,27 @@ function generateToken(user) {
 
 module.export = {
   Mutation: {
-    async register(_, { registerInput: { username, email, password, confirmPassword }}) {
-              // Validate user data
-              // Make sure user doesn't exist
-              // Hash password and create user auth token 51:26
-              password = await bcrypt.hash(password, 12);
-              const newUser = new User({
-                email,
-                username,
-                password,
-                createdAt: new Date().toISOString()
-              });
+    async register(_, { registerInput: { username, email, password, confirmPassword } }) {
+      // Validate user data
+      // Make sure user doesn't exist
+      // Hash password and create user auth token 51:26
+      password = await bcrypt.hash(password, 12);
+      const newUser = new User({
+        email,
+        username,
+        password,
+        createdAt: new Date().toISOString()
+      });
 
-              const res = await newUser.save();
+      const res = await newUser.save();
 
-              const token = generateToken(res);
-              
-              return {
-                ...res._doc,
-                id: res._id,
-                token
-              };
-      }
+      const token = generateToken(res);
+
+      return {
+        ...res._doc,
+        id: res._id,
+        token
+      };
     }
+  }
 };
