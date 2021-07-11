@@ -19,7 +19,6 @@ function generateToken(user) {
   );
 }
 
-// 1:12:53
 module.exports = {
   Mutation: {
     async login(_, { username, password }) {
