@@ -11,7 +11,6 @@ const server = new ApolloServer({
   context: ({ req }) => ({ req })
 });
 
-// connect to database
 mongoose
   .connect(mongoURI, { useNewUrlParser: true })
   .then(() => {
